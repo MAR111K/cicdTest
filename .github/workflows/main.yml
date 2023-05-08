@@ -11,4 +11,5 @@ jobs:
     - name: List Files in Directory
       run: 
         cd /;
+        cd var/www/;
         ls 
