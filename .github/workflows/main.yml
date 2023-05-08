@@ -3,8 +3,18 @@ name: Check Files
 on: workflow_dispatch 
 
 jobs:
+  build:   
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+    - name: Install Dependencies
+      run: npm i
+    - name: Build Project
+      run: npm run build
   check_files:
     runs-on: self-hosted
+    needs: build
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v2
