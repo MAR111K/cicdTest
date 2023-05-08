@@ -25,4 +25,5 @@ jobs:
         git pull;
         npm i ;
         npm run build;
-        ls;
+        cp -r .output/. /var/www/cicd/;
+        pm2 restart all;
