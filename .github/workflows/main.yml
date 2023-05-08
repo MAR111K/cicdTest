@@ -21,8 +21,8 @@ jobs:
     - name: List Files in Directory
       run: 
         cd /;
-        cd projects/cicdTest/
-        git pull
-        npm i 
-        npm run build
-        ls
+        cd projects/cicdTest/;
+        git pull;
+        npm i ;
+        npm run build;
+        ls;
