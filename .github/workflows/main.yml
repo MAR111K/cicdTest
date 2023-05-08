@@ -3,23 +3,21 @@ name: Check Files
 on: workflow_dispatch 
 
 jobs:
-  build:
+  build:   
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [14.x, 16.x, 18.x, 20.x]
     steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-      - run: npm i
-      - run: npm run build 
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+    - name: Install Dependencies
+      run: npm i
+    - name: Build Project
+      run: npm run build
   check_files:
     runs-on: self-hosted
     needs: build
     steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
     - name: List Files in Directory
       run: 
-        ls 
+        ls;
