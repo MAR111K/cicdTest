@@ -1,0 +1,12 @@
+name: Check Files
+
+on: workflow_dispatch 
+
+jobs:
+  check_files:
+    runs-on: self-hosted
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+    - name: List Files in Directory
+      run: ls 
