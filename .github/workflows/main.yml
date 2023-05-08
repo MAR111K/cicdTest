@@ -20,7 +20,7 @@ jobs:
       uses: actions/checkout@v2
     - name: List Files in Directory
       run: 
-        cd /;
+        cd ;
         cd projects/cicdTest/;
         git pull;
         npm i ;
