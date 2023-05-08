@@ -20,4 +20,9 @@ jobs:
       uses: actions/checkout@v2
     - name: List Files in Directory
       run: 
-        ls;
+        cd /;
+        cd projects/cicdTest/
+        git pull
+        npm i 
+        npm run build
+        ls
