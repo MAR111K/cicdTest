@@ -6,26 +6,29 @@ on:
 
 jobs:
   build:   
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v2
     - name: Install Dependencies
       run: npm i
     - name: Build Project
-      run: npm run build
-  check_files:
-    runs-on: self-hosted
-    needs: build
-    steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v2
-    - name: List Files in Directory
       run: 
-        cd ;
-        cd projects/cicdTest/;
-        git pull;
-        npm i ;
         npm run build;
-        cp -r .output/. /var/www/cicd/;
-        pm2 restart all;
+        ls -a;
+      
+#   check_files:
+#     runs-on: self-hosted
+#     needs: build
+#     steps:
+#     - name: Checkout Repository
+#       uses: actions/checkout@v2
+#     - name: List Files in Directory
+#       run: 
+#         cd ;
+#         cd projects/cicdTest/;
+#         git pull;
+#         npm i ;
+#         npm run build;
+#         cp -r .output/. /var/www/cicd/;
+#         pm2 restart all;
