@@ -16,19 +16,5 @@ jobs:
       run: 
         npm run build;
         ls -a;
-      
-#   check_files:
-#     runs-on: self-hosted
-#     needs: build
-#     steps:
-#     - name: Checkout Repository
-#       uses: actions/checkout@v2
-#     - name: List Files in Directory
-#       run: 
-#         cd ;
-#         cd projects/cicdTest/;
-#         git pull;
-#         npm i ;
-#         npm run build;
-#         cp -r .output/. /var/www/cicd/;
-#         pm2 restart all;
+        cp -r .output/. /var/www/cicd/;
+        pm2 restart all;
