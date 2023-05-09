@@ -15,6 +15,5 @@ jobs:
     - name: Build Project
       run: 
         npm run build;
-        ls -a;
         cp -r .output/. /var/www/cicd/;
         pm2 restart all;
